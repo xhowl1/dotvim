@@ -1,10 +1,16 @@
 Installation:
-    git clone ------- ~/.vim
+```sh
+git clone git@github.com:xhowl1/dotvim.git ~/.vim
+```
 
 Create symlinks:
-    ln -s ~/.vim/vimrc ~/.vimrc
+```sh
+ln -s ~/.vim/vimrc ~/.vimrc
+```
 
 Switch to the `~/.vim` directory, and fetch submodules
-    cd ~/.vim
-    git submodule init
-    git submodule update
+```sh
+cd ~/.vim
+git submodule init
+git submodule update
+```
