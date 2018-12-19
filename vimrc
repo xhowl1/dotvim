@@ -36,4 +36,3 @@ set listchars=tab:>\
 " vim-javascript
 " jsdocs
 let g:javascript_plugin_jsdoc = 1
-
