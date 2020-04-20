@@ -22,3 +22,6 @@
 [submodule "bundle/ale"]
 	path = bundle/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "bundle/dracula"]
+	path = bundle/dracula
+	url = git@github.com:dracula/vim.git
