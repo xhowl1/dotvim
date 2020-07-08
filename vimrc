@@ -26,7 +26,7 @@ set laststatus=2
 "let g:tern_show_argument_hits='on_hold'
 "let g:tern_map_keys=1
 
-" Set tab to 4 spaces
+" Set tab to 22 spaces
 set tabstop=2 shiftwidth=2 expandtab
 
 " show leading space and eol char
