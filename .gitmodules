@@ -25,3 +25,6 @@
 [submodule "bundle/dracula"]
 	path = bundle/dracula
 	url = git@github.com:dracula/vim.git
+[submodule "bundle/typecript-vim"]
+	path = bundle/typecript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
