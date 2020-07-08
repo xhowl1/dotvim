@@ -54,3 +54,5 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
 \ }  
 
+" Set powerline fonts (for arrows)
+let g:airline_powerline_fonts = 1
