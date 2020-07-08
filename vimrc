@@ -36,3 +36,6 @@ set listchars=tab:>\
 " vim-javascript
 " jsdocs
 let g:javascript_plugin_jsdoc = 1
+
+" Indent chained method calls
+setlocal indentkeys+=0
