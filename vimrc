@@ -19,6 +19,9 @@ let NERDTreeShowHidden = 1
 " automatically delete buffer when file is deleted in NERDTree
 let NERDTreeAutoDeleteBuffer = 1
 
+" increase NERDTree width
+let g:NERDTreeWinSize=60
+
 " always show status line
 set laststatus=2
 
@@ -26,7 +29,7 @@ set laststatus=2
 "let g:tern_show_argument_hits='on_hold'
 "let g:tern_map_keys=1
 
-" Set tab to 22 spaces
+" Set tab to 4 spaces
 set tabstop=2 shiftwidth=2 expandtab
 
 " show leading space and eol char
@@ -56,6 +59,9 @@ let g:NERDTreeIndicatorMapCustom = {
 
 " Set powerline fonts (for arrows)
 let g:airline_powerline_fonts = 1
+
+" Enable tab line
+let g:airline#extensions#tabline#enabled = 1
 
 " coc.nvim coc-tsserver extension
 let g:coc_global_extensions = [ 'coc-tsserver' ]
@@ -91,16 +97,17 @@ endif
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" Commented this out coz I need tab for spaces
+"inoremap <silent><expr> <TAB>
+"      \ pumvisible() ? "\<C-n>" :
+"      \ <SID>check_back_space() ? "\<TAB>" :
+"      \ coc#refresh()
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+"
+"function! s:check_back_space() abort
+"  let col = col('.') - 1
+"  return !col || getline('.')[col - 1]  =~# '\s'
+"endfunction
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -221,6 +228,17 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Show autocomplete when Tab is pressed
-inoremap <silent><expr> <Tab> coc#refresh()
+"inoremap <silent><expr> <Tab> coc#refresh()
 
 "------- end of copy pasted config
+"
+"Show whitespaces
+"set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
+"ctrlp
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+"ALE
+let b:ale_linters = ['eslint']
+"let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
