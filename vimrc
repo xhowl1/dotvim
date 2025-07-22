@@ -60,8 +60,19 @@ let g:airline#extensions#tabline#enabled = 1
 "Show whitespaces
 "set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
-"ctrlp
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+"fzf.vim configuration
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" fzf key mappings
+nnoremap <C-p> :Files<CR>
+nnoremap <C-b> :Buffers<CR>
+nnoremap <C-g> :GFiles<CR>
+
+" Ignore files/directories
+let $FZF_DEFAULT_COMMAND = 'find . -type f ! -path "*/node_modules/*" ! -path "*/.git/*" ! -name "*.DS_Store"'
 
 "ALE DevOps configuration
 let g:ale_linters = {
