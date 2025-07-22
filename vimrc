@@ -10,8 +10,9 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " map NERDTree toggle
 nmap <F3> :NERDTreeToggle<CR>
 
-" add line numbers
+" add line numbers with relative numbering
 set number
+set relativenumber
 
 " show hidden files
 let NERDTreeShowHidden = 1
@@ -51,8 +52,13 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Unknown"   : "?"
 \ }  
 
+
 " Set powerline fonts (for arrows)
 let g:airline_powerline_fonts = 1
+
+" vim-devicons basic setup
+set encoding=UTF-8
+
 
 " Enable tab line
 let g:airline#extensions#tabline#enabled = 1
@@ -70,6 +76,7 @@ let g:fzf_action = {
 nnoremap <C-p> :Files<CR>
 nnoremap <C-b> :Buffers<CR>
 nnoremap <C-g> :GFiles<CR>
+
 
 " Ignore files/directories
 let $FZF_DEFAULT_COMMAND = 'find . -type f ! -path "*/node_modules/*" ! -path "*/.git/*" ! -name "*.DS_Store"'
@@ -89,3 +96,22 @@ let g:ale_fixers = {
 \   'bash': ['shfmt'],
 \}
 let g:ale_fix_on_save = 1
+
+" DevOps-specific file settings
+" YAML settings (Ansible, Kubernetes, etc.)
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yaml setlocal foldmethod=indent
+autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yaml,yml set listchars=tab:>\ ,trail:·,extends:>,precedes:<
+autocmd FileType yaml,yml set list
+
+" Python settings (DevOps scripting)
+autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
+autocmd FileType python setlocal textwidth=79
+
+" Terraform settings
+autocmd FileType terraform setlocal ts=2 sts=2 sw=2 expandtab
+let g:terraform_fmt_on_save=1
+
+" Ensure files end with newline
+set fixendofline
